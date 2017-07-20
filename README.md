@@ -7,6 +7,10 @@ RegeneratorRuntime bloat).
 
 The API is a bit similar to [https://github.com/tj/node-migrate](node-migrate).
 
+```sh
+npm install --save @motet-a/migrate
+```
+
 # Documentation, tutorials, workshops and moocs
 
 There is no fancy documentation, but don’t worry, the source code
