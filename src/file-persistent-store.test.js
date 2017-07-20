@@ -4,9 +4,8 @@ import 'mocha'
 import fs from 'fs'
 import tmp from 'tmp'
 import assert from 'assert'
-// HACK: Flow don't know `util.promisify`
-const {promisify} = (require('util'): any)
 
+import {promisify} from './util'
 import FilePersistentStore from './file-persistent-store'
 
 describe('FilePersistentStore', () => {

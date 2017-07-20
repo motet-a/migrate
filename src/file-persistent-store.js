@@ -1,9 +1,8 @@
 // @flow
 
-const fs = require('fs')
-// HACK: Flow doesn't know `util.promisify`
-const {promisify} = (require('util'): any)
+import fs from 'fs'
 
+import {promisify} from './util'
 import type {Path, PersistentStore} from '.'
 
 export default class FilePersistentStore implements PersistentStore {
