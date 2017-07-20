@@ -2,7 +2,7 @@
 
 import fs from 'fs'
 
-import {promisify} from './util'
+import {promisify, ignoreENOENT} from './util'
 import type {Path, PersistentStore} from '.'
 
 export default class FilePersistentStore implements PersistentStore {
@@ -12,26 +12,24 @@ export default class FilePersistentStore implements PersistentStore {
         this._path = path
     }
 
-    async load() {
-        try {
+    load() {
+        return ignoreENOENT(async () => {
             const buffer = await promisify(fs.readFile)(
                 this._path,
             )
             return buffer.toString()
-        } catch (error) {
-            if (error.code === 'ENOENT') {
-                return
-            }
-            throw error
-        }
+        })
     }
 
-    save(data: ?string) {
+    async save(data: ?string) {
         if (!data) {
-            return promisify(fs.unlink)(this._path)
+            await ignoreENOENT(
+                () => promisify(fs.unlink)(this._path)
+            )
+            return
         }
 
-        return promisify(fs.writeFile)(
+        await promisify(fs.writeFile)(
             this._path,
             data,
         )

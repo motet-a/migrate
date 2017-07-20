@@ -14,7 +14,7 @@ const mapCollection = async (collection, mapFunction) => {
 
         await collection.updateOne(
             {_id: doc._id},
-            mapFunction(doc),
+            mapFunction(doc)
         )
     }
 }
@@ -48,9 +48,9 @@ module.exports = db => [
                 user => ({
                     $set: {
                         firstName: user.firstName.trim(),
-                        lastName: user.lastName.trim(),
+                        lastName: user.lastName.trim()
                     },
-                }),
+                })
             )
         },
         async down() {
@@ -66,9 +66,9 @@ module.exports = db => [
                 user => ({
                     $set: {
                         firstName: capitalize(user.firstName),
-                        lastName: capitalize(user.lastName),
+                        lastName: capitalize(user.lastName)
                     },
-                }),
+                })
             )
         },
         async down() {
@@ -85,7 +85,7 @@ module.exports = db => [
                     $set: {
                         fullName: user.firstName + ' ' + user.lastName,
                     },
-                }),
+                })
             )
         },
         async down() {
