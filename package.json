@@ -12,7 +12,9 @@
     "build": "rollup -c rollup.config.js",
     "flow": "flow",
     "mocha": "mocha --compilers js:babel-register src/index.test.js",
-    "test": "npm run flow && npm run mocha"
+    "test": "npm run flow && npm run mocha",
+    "test-examples": "./examples/run.sh",
+    "ci": "npm run test && npm run test-examples"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
