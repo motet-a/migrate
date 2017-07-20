@@ -1,0 +1,29 @@
+{
+  "name": "migrate",
+  "version": "0.0.1",
+  "description": "The abstractest database migration toolkit",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "author": "Antoine Motet",
+  "license": "ISC",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "flow": "flow",
+    "mocha": "mocha --compilers js:babel-register src/index.test.js",
+    "test": "npm run flow && npm run mocha"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.50.0",
+    "mocha": "^3.4.2",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "tmp": "0.0.31"
+  }
+}
