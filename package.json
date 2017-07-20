@@ -1,6 +1,6 @@
 {
   "name": "@motet-a/migrate",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "The abstractest database migration toolkit",
   "main": "index.js",
   "files": [
