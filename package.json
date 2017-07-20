@@ -14,7 +14,7 @@
     "mocha": "mocha --compilers js:babel-register src/index.test.js",
     "test": "npm run flow && npm run mocha",
     "test-examples": "./examples/run.sh",
-    "ci": "npm run test && npm run test-examples"
+    "ci": "npm run test && npm run build && npm run test-examples"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
