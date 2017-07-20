@@ -1,5 +1,7 @@
 # migrate
 
+[![Build Status](https://travis-ci.org/motet-a/migrate.svg?branch=master)](https://travis-ci.org/motet-a/migrate)
+
 Yet another abstract database migration toolkit for Node.js. Since it
 is written with ES2017 and Flow awesomeness, it requires Node.js
 \>= 7.6 (however, it may be transpiled down to ES5 with the ugly
