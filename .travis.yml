@@ -4,5 +4,11 @@ node_js:
   - "7"
   - "8"
 
+cache:
+  npm: true
+  directories:
+    - node_modules
+    - examples/mongo/node_modules
+
 script:
   - npm run ci
